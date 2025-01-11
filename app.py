@@ -4,12 +4,11 @@ app = Flask(__name__)
 
 PRODUCTS = [{
     'id': 1,
-    'title': 'Pink Crossandra',
+    'title': 'Pink Blue Crossandra',
     'price': '2000'
-}, 
-{
+}, {
     'id': 2,
-    'title': 'Arabian Jasmine',
+    'title': 'Arabian Jasmine and sunflower',
     'price': '2500'
 }, {
     'id': 3,
@@ -19,17 +18,18 @@ PRODUCTS = [{
     'id': 3,
     'title': 'Peace lily',
     'price': '2500'
-}
-]
+}]
+
 
 @app.route('/')
 def index():
-  return render_template('home.html', products=PRODUCTS)
+    return render_template('home.html', products=PRODUCTS)
+
 
 @app.route('/products')
 def list_products():
-  return jsonify(PRODUCTS)
+    return jsonify(PRODUCTS)
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
